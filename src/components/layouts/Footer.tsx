@@ -1,9 +1,9 @@
 import {
   Code2,
-  Twitter,
-  Linkedin,
-  Github,
-  Dribbble,
+  MessageCircle,
+  Briefcase,
+  Code,
+  Globe,
   Mail,
   Phone,
   MapPin,
@@ -38,10 +38,10 @@ const techIcons = [
 ];
 
 const socials = [
-  { icon: Twitter, href: '#' },
-  { icon: Linkedin, href: '#' },
-  { icon: Github, href: '#' },
-  { icon: Dribbble, href: '#' },
+  { icon: MessageCircle, href: '#' },
+  { icon: Briefcase, href: '#' },
+  { icon: Code, href: '#' },
+  { icon: Globe, href: '#' },
 ];
 
 export default function Footer() {
