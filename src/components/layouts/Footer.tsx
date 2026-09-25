@@ -67,31 +67,34 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-ink-950 text-slate-400 relative overflow-hidden border-t border-slate-800/80">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#fffdfa] via-[#fff7ed]/55 to-[#ffedd5]/35 text-slate-600 border-t border-orange-200/80">
+      {/* Top glowing orange brand accent line */}
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff6a00] to-transparent opacity-85" />
+
       {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-900/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Newsletter / Pre-footer section */}
-      <div className="border-b border-slate-800/80 py-12 relative z-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-gradient-to-r from-ink-900 via-slate-900 to-ink-900 p-8 lg:p-10 border border-slate-800/90 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div className="border-b border-orange-200/60 py-8 sm:py-10 relative z-10">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+          <div className="rounded-2xl bg-white/95 backdrop-blur-md p-6 sm:p-8 lg:p-9 border border-orange-200/70 shadow-xl shadow-orange-950/5 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
             <div className="max-w-xl text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-950 border border-primary-800 text-primary-400 text-xs font-semibold mb-3">
-                <Sparkles className="w-3.5 h-3.5" />
-                Stay Ahead in Tech
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/80 text-primary-800 text-xs font-semibold mb-2.5">
+                <Sparkles className="w-3.5 h-3.5 text-primary-600" />
+                <span>Stay Ahead in Tech</span>
               </div>
-              <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-ink-900 tracking-tight">
                 Subscribe to Engineering & Growth Insights
               </h3>
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="mt-1.5 text-xs sm:text-sm text-slate-500">
                 Monthly teardowns of scalable cloud architectures, AI automation playbooks, and modern SEO algorithms.
               </p>
             </div>
 
-            <div className="w-full lg:w-auto min-w-[320px] sm:min-w-[380px]">
+            <div className="w-full lg:w-auto min-w-[300px] sm:min-w-[360px]">
               {subscribed ? (
-                <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-sm">
+                <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm">
                   <CheckCircle className="w-5 h-5 flex-shrink-0" />
                   <span>Thank you! You're subscribed to ZenoxDev insights.</span>
                 </div>
@@ -103,11 +106,11 @@ export default function Footer() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your business email"
-                    className="flex-1 px-4 py-3 rounded-xl bg-slate-950 border border-slate-700/80 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-primary-500 transition-colors"
+                    className="flex-1 px-4 py-2.5 sm:py-3 rounded-xl bg-slate-50/80 border border-orange-200/80 text-ink-900 placeholder-slate-400 text-sm focus:outline-none focus:border-primary-500 transition-colors"
                   />
                   <button
                     type="submit"
-                    className="px-5 py-3 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white text-sm font-semibold shadow-md shadow-primary-600/30 transition-all cursor-pointer flex items-center gap-1.5"
+                    className="px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white text-sm font-semibold shadow-md shadow-primary-600/30 transition-all cursor-pointer flex items-center gap-1.5"
                   >
                     <span>Join</span>
                     <ArrowRight className="w-4 h-4" />
@@ -120,27 +123,27 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Links */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-10 sm:py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8">
           {/* Company branding */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4 group focus:outline-none" aria-label="ZenoxDev Home">
+            <Link href="/" className="inline-block mb-3.5 group focus:outline-none" aria-label="ZenoxDev Home">
               <div className="relative transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/icon-isnet.png"
                   alt="ZenoxDev Logo"
                   width={160}
                   height={107}
-                  className="h-14 sm:h-16 w-auto object-contain -ml-1 filter drop-shadow-[0_2px_14px_rgba(255,106,0,0.35)]"
+                  className="h-12 sm:h-14 w-auto object-contain -ml-1 filter drop-shadow-[0_2px_14px_rgba(255,106,0,0.35)]"
                 />
               </div>
             </Link>
-            <p className="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
+            <p className="text-sm leading-relaxed text-slate-500 mb-5 max-w-sm">
               ZenoxDev is a premier software engineering and digital growth agency. We architect high-performance web applications, native mobile experiences, AI-driven organic SEO, and automated CI/CD infrastructures.
             </p>
 
             {/* Social links */}
-            <div className="flex gap-2.5 mb-6">
+            <div className="flex gap-2.5 mb-5">
               {socials.map((social) => (
                 <a
                   key={social.label}
@@ -148,30 +151,30 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary-600 hover:border-primary-500 transition-all duration-200"
+                  className="w-9 h-9 rounded-xl bg-white border border-orange-200/70 flex items-center justify-center text-slate-500 hover:text-white hover:bg-primary-600 hover:border-primary-600 transition-all duration-200 shadow-xs"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
 
-            <div className="inline-flex items-center gap-2 text-xs text-slate-400 py-1.5 px-3 rounded-lg bg-slate-900/60 border border-slate-800">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 text-xs text-slate-600 py-1.5 px-3 rounded-lg bg-white border border-orange-200/70 shadow-xs">
+              <ShieldCheck className="w-4 h-4 text-emerald-500" />
               <span>SOC2 Compliant Practices & NDA Protected</span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="font-heading text-sm font-semibold text-ink-900 uppercase tracking-wider mb-3.5">
               Navigation
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-primary-400 transition-colors flex items-center gap-1.5 group"
+                    className="text-sm text-slate-600 hover:text-primary-600 transition-colors flex items-center gap-1.5 group"
                   >
                     <ArrowRight className="w-3 h-3 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     <span>{link.label}</span>
@@ -183,15 +186,15 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="font-heading text-sm font-semibold text-ink-900 uppercase tracking-wider mb-3.5">
               Our Capabilities
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {serviceLinks.map((service) => (
                 <li key={service.label}>
                   <Link
                     href={service.href}
-                    className="text-sm text-slate-400 hover:text-primary-400 transition-colors flex items-center gap-1.5 group"
+                    className="text-sm text-slate-600 hover:text-primary-600 transition-colors flex items-center gap-1.5 group"
                   >
                     <ArrowRight className="w-3 h-3 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     <span>{service.label}</span>
@@ -203,42 +206,42 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div>
-            <h4 className="font-heading text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="font-heading text-sm font-semibold text-ink-900 uppercase tracking-wider mb-3.5">
               Headquarters & Contact
             </h4>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-2.5 mb-5">
               <li>
                 <a
                   href="mailto:contact@zenoxdev.com"
-                  className="flex items-start gap-2.5 text-sm text-slate-400 hover:text-primary-400 transition-colors"
+                  className="flex items-start gap-2.5 text-sm text-slate-600 hover:text-primary-600 transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" />
+                  <Mail className="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" />
                   <span>contact@zenoxdev.com</span>
                 </a>
               </li>
               <li>
                 <a
                   href="tel:+15551234567"
-                  className="flex items-start gap-2.5 text-sm text-slate-400 hover:text-primary-400 transition-colors"
+                  className="flex items-start gap-2.5 text-sm text-slate-600 hover:text-primary-600 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" />
+                  <Phone className="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" />
                   <span>+1 (555) 123-4567</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2.5 text-sm text-slate-400">
-                <MapPin className="w-4 h-4 text-primary-400 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2.5 text-sm text-slate-600">
+                <MapPin className="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" />
                 <span>San Francisco, CA & Remote Global Hub</span>
               </li>
             </ul>
 
-            <h5 className="font-heading text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2.5">
+            <h5 className="font-heading text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
               Core Tech Stack
             </h5>
             <div className="flex flex-wrap gap-1.5">
               {techBadges.map((badge) => (
                 <span
                   key={badge.label}
-                  className="px-2 py-0.5 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-medium text-slate-300"
+                  className="px-2 py-0.5 rounded-md bg-white border border-orange-200/70 text-[11px] font-medium text-slate-600 shadow-xs"
                 >
                   {badge.label}
                 </span>
@@ -248,19 +251,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom copyright and legal */}
-        <div className="mt-14 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="mt-10 pt-6 border-t border-orange-200/60 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} ZenoxDev Inc. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/about" className="hover:text-slate-300 transition-colors">
+            <Link href="/about" className="hover:text-ink-900 transition-colors">
               Company
             </Link>
-            <Link href="/services" className="hover:text-slate-300 transition-colors">
+            <Link href="/services" className="hover:text-ink-900 transition-colors">
               Services
             </Link>
-            <Link href="/portfolio" className="hover:text-slate-300 transition-colors">
+            <Link href="/portfolio" className="hover:text-ink-900 transition-colors">
               Case Studies
             </Link>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">
+            <Link href="/contact" className="hover:text-ink-900 transition-colors">
               Privacy Policy
             </Link>
           </div>

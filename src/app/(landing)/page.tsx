@@ -62,16 +62,16 @@ export default function HomePage() {
       <Hero />
 
       {/* Trust & Social Proof Marquee / Logo Bar */}
-      <section className="py-10 border-y border-slate-200/80 bg-slate-50/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
+      <section className="py-5 border-y border-slate-200/80 bg-slate-50/60">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
             Trusted by Engineering & Growth Teams at High-Velocity Companies
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-75">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-80">
             {trustedPartners.map((partner) => (
               <div
                 key={partner}
-                className="font-heading font-extrabold text-base sm:text-lg tracking-tight text-slate-500 hover:text-primary-600 transition-colors cursor-default"
+                className="font-heading font-extrabold text-sm sm:text-base tracking-tight text-slate-500 hover:text-primary-600 transition-colors cursor-default"
               >
                 {partner}
               </div>

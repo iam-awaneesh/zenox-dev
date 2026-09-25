@@ -35,14 +35,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-ink-950/95 backdrop-blur-2xl shadow-xl shadow-black/30 border-b border-orange-500/20 py-2.5"
-          : "bg-ink-950/85 backdrop-blur-xl border-b border-white/10 py-3.5"
+          ? "bg-[#fffbf8]/98 backdrop-blur-2xl shadow-md shadow-orange-950/5 border-b border-orange-200/80 py-2"
+          : "bg-[#fffcf9]/92 backdrop-blur-xl border-b border-orange-100/80 py-2.5 sm:py-3"
       }`}
     >
       {/* Top glowing orange brand accent line */}
-      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff6a00] to-transparent opacity-85" />
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-orange-400 via-[#ff6a00] to-orange-500 opacity-90" />
 
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main Navigation">
+      <nav className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12" aria-label="Main Navigation">
         <div className="flex items-center justify-between">
           {/* Logo with transparent icon and subtle warm ambient glow */}
           <Link
@@ -64,7 +64,7 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center">
-            <ul className="flex items-center gap-1 bg-white/[0.04] p-1.5 rounded-full border border-white/10 backdrop-blur-md shadow-inner">
+            <ul className="flex items-center gap-1 bg-orange-50/60 p-1.5 rounded-full border border-orange-200/60 backdrop-blur-md shadow-xs">
               {navLinks.map((link) => {
                 const isActive =
                   link.href === "/"
@@ -77,13 +77,13 @@ export default function Navbar() {
                       href={link.href}
                       className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5 ${
                         isActive
-                          ? "text-white font-semibold bg-gradient-to-r from-orange-500/25 to-orange-600/10 border border-orange-500/40 shadow-[0_0_15px_rgba(255,106,0,0.2)]"
-                          : "text-slate-300 hover:text-white hover:bg-white/[0.07]"
+                          ? "text-primary-700 font-semibold bg-white border border-orange-200/80 shadow-xs"
+                          : "text-slate-600 hover:text-ink-900 hover:bg-white/60"
                       }`}
                     >
                       <span>{link.label}</span>
                       {isActive && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#ff6a00] shadow-[0_0_8px_#ff6a00]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
                       )}
                     </Link>
                   </li>
@@ -114,7 +114,7 @@ export default function Navbar() {
             </Link>
             <button
               type="button"
-              className="p-2.5 rounded-xl text-slate-200 hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+              className="p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 cursor-pointer"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
@@ -127,7 +127,7 @@ export default function Navbar() {
         {/* Mobile Navigation Drawer */}
         {mobileOpen && (
           <div className="lg:hidden mt-3 pb-2 animate-fade-in-up">
-            <div className="bg-ink-950/95 backdrop-blur-2xl rounded-3xl shadow-2xl p-5 border border-orange-500/20">
+            <div className="bg-[#fffbf8]/98 backdrop-blur-2xl rounded-3xl shadow-xl p-5 border border-orange-200/80">
               <ul className="flex flex-col gap-1 mb-4">
                 {navLinks.map((link) => {
                   const isActive =
@@ -141,8 +141,8 @@ export default function Navbar() {
                         href={link.href}
                         className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-medium transition-colors ${
                           isActive
-                            ? "bg-gradient-to-r from-orange-500/20 to-orange-600/10 text-white font-bold border border-orange-500/40"
-                            : "text-slate-300 hover:bg-white/[0.06] hover:text-white"
+                            ? "bg-gradient-to-r from-primary-50 to-orange-50 text-primary-700 font-bold border border-primary-200"
+                            : "text-slate-600 hover:bg-slate-50 hover:text-ink-900"
                         }`}
                       >
                         <span>{link.label}</span>
@@ -155,7 +155,7 @@ export default function Navbar() {
                 })}
               </ul>
 
-              <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+              <div className="pt-3 border-t border-slate-200 flex flex-col gap-2">
                 <Link
                   href="/contact"
                   className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-[#ff6a00] via-[#ea580c] to-[#f0440a] text-white text-sm font-bold shadow-lg shadow-orange-600/30 text-center"

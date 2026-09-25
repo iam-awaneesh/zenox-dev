@@ -5,49 +5,49 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-primary-50/70 via-white to-white hero-grid-bg"
+      className="relative pt-20 sm:pt-22 lg:pt-24 pb-8 sm:pb-10 lg:pb-14 overflow-hidden bg-gradient-to-b from-primary-50/60 via-white to-white hero-grid-bg"
     >
       {/* Decorative ambient glowing lights */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-primary-400/15 to-accent-cyan/15 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-40 -left-20 w-80 h-80 bg-primary-300/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-accent-cyan/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 w-[600px] h-[260px] bg-gradient-to-tr from-primary-400/15 to-accent-orange/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-28 -left-20 w-72 h-72 bg-primary-300/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
+      <div className="absolute bottom-6 right-0 w-80 h-80 bg-accent-gold/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column: Heading and CTAs */}
           <div className="lg:col-span-7 text-center lg:text-left fade-up">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-100/80 border border-primary-200/60 text-primary-800 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-100/90 border border-primary-200/70 text-primary-800 text-xs sm:text-sm font-semibold mb-4 shadow-xs">
               <Sparkles className="w-4 h-4 text-primary-600 animate-spin" style={{ animationDuration: '8s' }} />
               <span>Full-Stack Engineering & AI Growth Agency</span>
             </div>
 
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight text-ink-900">
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl font-extrabold leading-[1.14] tracking-tight text-ink-900">
               Engineering Digital Dominance Through{" "}
               <span className="text-gradient">Code, AI & Automation</span>
             </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-ink-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-4 text-sm sm:text-base lg:text-lg text-ink-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               We design and build mission-critical web and mobile applications, supercharge organic search traffic with AI-driven SEO engines, and eliminate operational bottlenecks through robust CI/CD and automation workflows.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-base shadow-xl shadow-primary-600/30 hover:shadow-2xl hover:shadow-primary-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group"
+                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-base shadow-xl shadow-primary-600/30 hover:shadow-2xl hover:shadow-primary-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group"
               >
                 <span>Book Consultation & Audit</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white text-ink-800 font-semibold text-base border border-slate-200 hover:border-primary-300 hover:bg-primary-50/50 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-white text-ink-800 font-semibold text-base border border-slate-200 hover:border-primary-300 hover:bg-primary-50/50 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
                 <span>Explore Solutions</span>
               </Link>
             </div>
 
             {/* Quick Proof Pillars */}
-            <div className="mt-10 pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 text-left">
+            <div className="mt-6 pt-5 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 text-left">
               <div>
                 <p className="font-heading text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">120+</p>
                 <p className="text-xs sm:text-sm text-ink-500 font-medium">Projects Delivered</p>
