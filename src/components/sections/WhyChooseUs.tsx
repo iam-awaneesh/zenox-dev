@@ -1,63 +1,87 @@
-import { Users, Repeat, Clock, Headphones } from "lucide-react";
+import { BrainCircuit, Layers, Rocket, BarChart3, CheckCircle2 } from 'lucide-react';
 
 const reasons = [
   {
-    icon: Users,
-    title: "Experienced Team",
-    desc: "A dedicated team of senior engineers and consultants with a decade of combined experience across industries.",
+    icon: BrainCircuit,
+    title: 'AI-Driven Approach',
+    description:
+      'We leverage machine learning for smarter SEO, predictive analytics, and intelligent automation.',
   },
   {
-    icon: Repeat,
-    title: "Agile Process",
-    desc: "Iterative sprints with transparent communication, so you see progress every step of the way.",
+    icon: Layers,
+    title: 'Scalable Architecture',
+    description:
+      'Cloud-native, microservice-ready systems designed to handle millions of users without breaking a sweat.',
   },
   {
-    icon: Clock,
-    title: "Timely Delivery",
-    desc: "We respect deadlines. Every project ships on schedule with clear milestones and accountability.",
+    icon: Rocket,
+    title: 'Faster Time-to-Market',
+    description:
+      'CI/CD pipelines and agile delivery mean your product ships in weeks, not months.',
   },
   {
-    icon: Headphones,
-    title: "Ongoing Support",
-    desc: "Post-launch maintenance, monitoring, and enhancements to keep your product running smoothly.",
+    icon: BarChart3,
+    title: 'Data-Backed SEO',
+    description:
+      'Every optimization is grounded in real data, search intent analysis, and continuous performance tracking.',
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section id="why" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent-600 font-semibold text-sm uppercase tracking-wider">
-            Why BitJunoo
-          </span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-brand-900 mt-3 mb-4">
-            A Partner You Can Rely On
-          </h2>
-          <p className="text-slate-600">
-            We don&apos;t just write code — we build long-term partnerships rooted in
-            trust, quality, and measurable results.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reasons.map((r, i) => (
-            <div
-              key={r.title}
-              className="relative group p-7 rounded-2xl border border-slate-100 hover:border-accent-200 hover:bg-accent-50/30 transition-all duration-300"
-            >
-              <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-brand-50 text-brand-600 mb-5 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                <r.icon className="w-7 h-7" />
-              </div>
-              <h3 className="font-heading text-lg font-semibold text-brand-900 mb-3">
-                {r.title}
-              </h3>
-              <p className="text-sm text-slate-600 leading-relaxed">{r.desc}</p>
-              <div className="absolute top-6 right-6 text-5xl font-bold font-heading text-slate-100 group-hover:text-accent-100 transition-colors select-none">
-                {String(i + 1).padStart(2, "0")}
-              </div>
+    <section id="about" className="py-20 lg:py-28 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left: heading + checklist */}
+          <div className="lg:sticky lg:top-28">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 text-primary-700 text-xs font-semibold mb-4">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Why ZenoxDev
             </div>
-          ))}
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-ink-900">
+              Why Startups & Enterprises{' '}
+              <span className="text-gradient">Choose Us</span>
+            </h2>
+            <p className="mt-4 text-ink-500 text-lg leading-relaxed">
+              We combine deep engineering expertise with a growth mindset. Our
+              team doesn't just write code — we architect solutions that drive
+              measurable business outcomes.
+            </p>
+            <div className="mt-8 space-y-3">
+              {[
+                'Senior engineers on every project',
+                'Transparent, weekly progress reports',
+                'Post-launch support & maintenance',
+                'Flexible engagement models',
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary-600 flex-shrink-0" />
+                  <span className="text-ink-700 text-sm font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: cards */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {reasons.map((reason, i) => (
+              <div
+                key={reason.title}
+                className="p-7 rounded-2xl glass-card shadow-sm hover:shadow-xl hover:shadow-primary-900/10 hover:-translate-y-1 transition-all duration-300"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-600 to-accent-cyan flex items-center justify-center mb-5 shadow-lg shadow-primary-600/20">
+                  <reason.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-heading text-lg font-bold text-ink-900 mb-2">
+                  {reason.title}
+                </h3>
+                <p className="text-sm text-ink-500 leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,86 +1,85 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    img: "https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "FinSight Analytics Dashboard",
-    desc: "A real-time financial analytics platform with custom charting, role-based access, and automated reporting.",
-    tag: "Web App",
-    tagColor: "bg-brand-100 text-brand-700",
+    image:
+      'https://images.pexels.com/photos/12969403/pexels-photo-12969403.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    title: 'FinTech Analytics Dashboard',
+    description:
+      'Real-time financial analytics platform with predictive AI insights and automated reporting.',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    category: 'Web App',
   },
   {
-    img: "https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "ShopGo Mobile Commerce",
-    desc: "A cross-platform mobile shopping app with secure checkout, push notifications, and loyalty rewards.",
-    tag: "Mobile App",
-    tagColor: "bg-accent-100 text-accent-700",
+    image:
+      'https://images.pexels.com/photos/270283/pexels-photo-270283.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    title: 'HealthSync Mobile App',
+    description:
+      'Cross-platform health tracking app with wearable integration and AI-powered recommendations.',
+    tags: ['React Native', 'Express', 'SQL'],
+    category: 'Mobile App',
   },
   {
-    img: "https://images.pexels.com/photos/6804068/pexels-photo-6804068.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-    title: "TeamFlow Project Hub",
-    desc: "An enterprise .NET-based project management suite with real-time collaboration and workflow automation.",
-    tag: "Enterprise",
-    tagColor: "bg-emerald-100 text-emerald-700",
+    image:
+      'https://images.pexels.com/photos/16675632/pexels-photo-16675632.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+    title: 'ShopSphere E-Commerce',
+    description:
+      'Headless e-commerce platform with AI-driven product search and automated CI/CD pipeline.',
+    tags: ['React', 'MongoDB', 'CI/CD'],
+    category: 'E-Commerce',
   },
 ];
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <div className="max-w-xl">
-            <span className="text-accent-600 font-semibold text-sm uppercase tracking-wider">
-              Our Work
-            </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-brand-900 mt-3 mb-4">
-              Projects That Speak for Themselves
-            </h2>
-            <p className="text-slate-600">
-              A selection of products we&apos;ve built for clients across fintech,
-              e-commerce, and enterprise SaaS.
-            </p>
+    <section id="portfolio" className="py-20 lg:py-28 bg-primary-50/50">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-primary-700 text-xs font-semibold mb-4 shadow-sm">
+            <ArrowUpRight className="w-3.5 h-3.5" />
+            Our Work
           </div>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-accent-500 transition-colors whitespace-nowrap"
-          >
-            Start your project
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-ink-900">
+            Projects That <span className="text-gradient">Deliver Results</span>
+          </h2>
+          <p className="mt-4 text-ink-500 text-lg">
+            A glimpse of products we've engineered for startups and enterprises.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-7">
-          {projects.map((p) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
             <article
-              key={p.title}
-              className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-brand-900/10 hover:-translate-y-2 transition-all duration-300"
+              key={project.title}
+              className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-2xl hover:shadow-primary-900/15 hover:-translate-y-2 transition-all duration-300 border border-gray-100"
             >
-              <div className="relative overflow-hidden h-52">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
+              <div className="relative h-52 overflow-hidden">
                 <img
-                  src={p.img}
-                  alt={p.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-900/40 to-transparent" />
-                <span
-                  className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold ${p.tagColor}`}
-                >
-                  {p.tag}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent" />
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[11px] font-bold text-primary-700">
+                  {project.category}
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="font-heading text-lg font-semibold text-brand-900 mb-2 group-hover:text-brand-600 transition-colors">
-                  {p.title}
+                <h3 className="font-heading text-lg font-bold text-ink-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  {project.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {p.desc}
+                <p className="text-sm text-ink-500 leading-relaxed mb-4">
+                  {project.description}
                 </p>
-                <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 group-hover:gap-2 transition-all">
-                  View case study
-                  <ArrowUpRight className="w-4 h-4" />
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-md bg-primary-50 text-primary-700 text-xs font-semibold"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </article>
