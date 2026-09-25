@@ -1,97 +1,141 @@
-import { ArrowRight, Sparkles, Zap } from 'lucide-react';
+import Link from "next/link";
+import { ArrowRight, Sparkles, Zap, ShieldCheck, CheckCircle2, TrendingUp, Layers, Terminal } from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-primary-50 via-white to-white"
+      className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-primary-50/70 via-white to-white hero-grid-bg"
     >
-      {/* Decorative blobs */}
-      <div className="absolute top-20 -left-20 w-72 h-72 bg-primary-200/40 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-cyan/20 rounded-full blur-3xl animate-pulse-glow" />
+      {/* Decorative ambient glowing lights */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-primary-400/15 to-accent-cyan/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-40 -left-20 w-80 h-80 bg-primary-300/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-accent-cyan/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Copy */}
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-6">
-              <Sparkles className="w-3.5 h-3.5" />
-              AI-Powered Digital Growth Solutions
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Left Column: Heading and CTAs */}
+          <div className="lg:col-span-7 text-center lg:text-left fade-up">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-100/80 border border-primary-200/60 text-primary-800 text-xs sm:text-sm font-semibold mb-6 shadow-xs">
+              <Sparkles className="w-4 h-4 text-primary-600 animate-spin" style={{ animationDuration: '8s' }} />
+              <span>Full-Stack Engineering & AI Growth Agency</span>
             </div>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-ink-900">
-              Engineering Growth Through{' '}
-              <span className="text-gradient">Code, SEO & Automation</span>
+
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight text-ink-900">
+              Engineering Digital Dominance Through{" "}
+              <span className="text-gradient">Code, AI & Automation</span>
             </h1>
-            <p className="mt-6 text-lg text-ink-500 leading-relaxed max-w-xl">
-              We build full-stack web and mobile applications, supercharge your
-              visibility with AI-driven SEO, and streamline operations with
-              intelligent automation — all backed by CI/CD best practices.
+
+            <p className="mt-6 text-base sm:text-lg text-ink-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              We design and build mission-critical web and mobile applications, supercharge organic search traffic with AI-driven SEO engines, and eliminate operational bottlenecks through robust CI/CD and automation workflows.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold shadow-lg shadow-primary-600/30 hover:shadow-xl hover:shadow-primary-600/40 hover:-translate-y-0.5 transition-all duration-300"
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold text-base shadow-xl shadow-primary-600/30 hover:shadow-2xl hover:shadow-primary-600/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 group"
               >
-                Start Your Project
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white text-ink-800 font-semibold border-2 border-gray-200 hover:border-primary-300 hover:bg-primary-50 transition-all duration-300"
+                <span>Book Consultation & Audit</span>
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white text-ink-800 font-semibold text-base border border-slate-200 hover:border-primary-300 hover:bg-primary-50/50 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                Explore Services
-              </a>
+                <span>Explore Solutions</span>
+              </Link>
             </div>
-            <div className="mt-10 flex items-center gap-8">
+
+            {/* Quick Proof Pillars */}
+            <div className="mt-10 pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-xl mx-auto lg:mx-0 text-left">
               <div>
-                <p className="font-heading text-3xl font-bold text-ink-900">120+</p>
-                <p className="text-sm text-ink-500">Projects Delivered</p>
+                <p className="font-heading text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">120+</p>
+                <p className="text-xs sm:text-sm text-ink-500 font-medium">Projects Delivered</p>
               </div>
-              <div className="w-px h-12 bg-gray-200" />
               <div>
-                <p className="font-heading text-3xl font-bold text-ink-900">98%</p>
-                <p className="text-sm text-ink-500">Client Satisfaction</p>
+                <p className="font-heading text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">98.4%</p>
+                <p className="text-xs sm:text-sm text-ink-500 font-medium">Client Retention</p>
               </div>
-              <div className="w-px h-12 bg-gray-200" />
               <div>
-                <p className="font-heading text-3xl font-bold text-ink-900">24/7</p>
-                <p className="text-sm text-ink-500">Support</p>
+                <p className="font-heading text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight">3.2x</p>
+                <p className="text-xs sm:text-sm text-ink-500 font-medium">Avg. Organic Growth</p>
               </div>
             </div>
           </div>
 
-          {/* Right: Abstract tech graphic */}
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-md aspect-square">
-              {/* Orbit rings */}
-              <div className="absolute inset-0 rounded-full border-2 border-primary-200/60 animate-float" />
-              <div className="absolute inset-8 rounded-full border-2 border-accent-cyan/30" />
-              <div className="absolute inset-16 rounded-full border-2 border-primary-300/40" />
+          {/* Right Column: Interactive Tech & Code Showcase */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              {/* Outer decorative card */}
+              <div className="relative rounded-3xl bg-gradient-to-tr from-primary-600/10 via-white to-accent-cyan/10 p-4 border border-primary-100 shadow-2xl backdrop-blur-xl">
+                {/* Tech Terminal Header */}
+                <div className="bg-ink-950 rounded-2xl p-5 text-slate-200 font-mono text-xs shadow-xl border border-slate-800">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
+                    <div className="flex items-center gap-2">
+                      <span className="w-3 h-3 rounded-full bg-rose-500" />
+                      <span className="w-3 h-3 rounded-full bg-amber-500" />
+                      <span className="w-3 h-3 rounded-full bg-emerald-500" />
+                    </div>
+                    <span className="text-[11px] text-slate-400 flex items-center gap-1.5 font-sans">
+                      <Terminal className="w-3.5 h-3.5 text-accent-cyan" />
+                      zenoxdev-pipeline.config.ts
+                    </span>
+                  </div>
 
-              {/* Center node */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary-600 to-accent-cyan flex items-center justify-center shadow-2xl shadow-primary-600/40 glow-shadow">
-                  <Zap className="w-14 h-14 text-white" fill="white" />
+                  <div className="space-y-1.5 text-[12px] leading-relaxed">
+                    <p className="text-slate-400">
+                      <span className="text-primary-400">const</span> stack = await ZenoxDev.<span className="text-accent-cyan">architect</span>({`{`}
+                    </p>
+                    <p className="pl-4 text-emerald-400">
+                      frontend: <span className="text-amber-300">&quot;Next.js 16 + React 19&quot;</span>,
+                    </p>
+                    <p className="pl-4 text-emerald-400">
+                      mobile: <span className="text-amber-300">&quot;React Native (iOS/Android)&quot;</span>,
+                    </p>
+                    <p className="pl-4 text-emerald-400">
+                      growthEngine: <span className="text-amber-300">&quot;AI Predictive SEO + Microdata&quot;</span>,
+                    </p>
+                    <p className="pl-4 text-emerald-400">
+                      devOps: <span className="text-amber-300">&quot;Docker + CI/CD Zero-Downtime&quot;</span>,
+                    </p>
+                    <p className="text-slate-400">{`}`});</p>
+                    <p className="text-slate-500 mt-2">// Status: 100% Production Ready</p>
+                    <div className="mt-3 flex items-center gap-2 text-emerald-400 font-sans text-xs bg-emerald-950/50 py-1.5 px-3 rounded-lg border border-emerald-800/60">
+                      <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                      <span>Zero vulnerabilities • 99.98% SLA Guaranteed</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Metrics Overlay */}
+                <div className="mt-4 grid grid-cols-2 gap-3">
+                  <div className="p-3.5 rounded-xl bg-white shadow-md border border-slate-100 flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-ink-500">SEO Traffic</p>
+                      <p className="text-sm font-heading font-bold text-ink-900">+240% YoY</p>
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-white shadow-md border border-slate-100 flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-ink-500">Deploy Speed</p>
+                      <p className="text-sm font-heading font-bold text-ink-900">&lt; 3 mins</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Floating tech badges */}
-              {[
-                { label: 'React', x: 'top-4 left-1/2 -translate-x-1/2', delay: '0s' },
-                { label: 'Node.js', x: 'top-1/2 right-0 -translate-y-1/2', delay: '1s' },
-                { label: 'MongoDB', x: 'bottom-4 left-1/2 -translate-x-1/2', delay: '2s' },
-                { label: 'Express', x: 'top-1/2 left-0 -translate-y-1/2', delay: '1.5s' },
-                { label: 'AI SEO', x: 'top-10 right-10', delay: '0.5s' },
-                { label: 'CI/CD', x: 'bottom-10 left-10', delay: '2.5s' },
-              ].map((badge) => (
-                <div
-                  key={badge.label}
-                  className={`absolute ${badge.x} px-3 py-1.5 rounded-lg bg-white shadow-lg shadow-primary-900/10 text-xs font-semibold text-ink-800 border border-gray-100 animate-float`}
-                  style={{ animationDelay: badge.delay }}
-                >
-                  {badge.label}
-                </div>
-              ))}
+              {/* Floating Orbiting Badges */}
+              <div className="hidden sm:flex absolute -top-4 -right-4 px-3 py-1.5 rounded-full bg-white shadow-lg border border-slate-100 text-xs font-semibold text-primary-700 items-center gap-1.5 animate-float">
+                <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                <span>Enterprise Grade</span>
+              </div>
             </div>
           </div>
         </div>

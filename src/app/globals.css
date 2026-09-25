@@ -51,15 +51,39 @@
 @layer utilities {
   .hero-grid-bg {
     background-image:
-      linear-gradient(to right, rgba(37, 99, 235, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
     background-size: 48px 48px;
   }
-  .gradient-text {
+  .hero-dot-bg {
+    background-image: radial-gradient(rgba(37, 99, 235, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .gradient-text,
+  .text-gradient {
     background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .gradient-text-amber {
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glow-shadow {
+    box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.35);
   }
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -67,22 +91,35 @@
   .animate-float-delayed {
     animation: float 6s ease-in-out infinite 2s;
   }
+  .animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
 }
 
 @keyframes float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-16px);
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
   }
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -91,5 +128,5 @@
 }
 
 .fade-up {
-  animation: fadeUp 0.7s ease-out both;
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
