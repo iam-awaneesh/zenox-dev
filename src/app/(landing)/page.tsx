@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import TechStack from "@/components/sections/TechStack";
-import Portfolio from "@/components/sections/Portfolio";
-import Testimonials from "@/components/sections/Testimonials";
-import CTABanner from "@/components/sections/CTABanner";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2, Shield, Zap, TrendingUp, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Full-Stack IT, Modern App Development & AI SEO Agency",
@@ -87,24 +79,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Services Component */}
-      {/* <Services /> */}
-
-      {/* Why Choose Us Component */}
-      {/* <WhyChooseUs /> */}
-
-      {/* Tech Stack Component */}
-      {/* <TechStack /> */}
-
-      {/* Portfolio Component */}
-      {/* <Portfolio /> */}
-
-      {/* Testimonials Component */}
-      {/* <Testimonials /> */}
-
-      {/* Call To Action Banner */}
-      {/* <CTABanner /> */}
     </>
   );
 }

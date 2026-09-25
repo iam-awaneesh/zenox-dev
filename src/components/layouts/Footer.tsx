@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Code2,
   Mail,
   Phone,
   MapPin,
@@ -124,13 +124,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Company branding */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-5 group inline-flex">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-600 via-primary-700 to-accent-cyan flex items-center justify-center shadow-lg shadow-primary-600/30 group-hover:scale-105 transition-transform">
-                <Code2 className="w-5 h-5 text-white" strokeWidth={2.5} />
+            <Link href="/" className="inline-block mb-4 group focus:outline-none" aria-label="ZenoxDev Home">
+              <div className="relative transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/icon-isnet.png"
+                  alt="ZenoxDev Logo"
+                  width={160}
+                  height={107}
+                  className="h-14 sm:h-16 w-auto object-contain -ml-1 filter drop-shadow-[0_2px_14px_rgba(255,106,0,0.35)]"
+                />
               </div>
-              <span className="font-heading font-extrabold text-2xl text-white tracking-tight">
-                Zenox<span className="text-primary-400">Dev</span>
-              </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400 mb-6 max-w-sm">
               ZenoxDev is a premier software engineering and digital growth agency. We architect high-performance web applications, native mobile experiences, AI-driven organic SEO, and automated CI/CD infrastructures.
