@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react';
+import { Globe, Briefcase, Code, Mail, Phone, MapPin } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Home', href: '#home' },
@@ -16,9 +16,9 @@ const services = [
 ];
 
 const socials = [
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Github, href: '#', label: 'GitHub' },
+  { icon: Globe, href: '#', label: 'Twitter' },
+  { icon: Briefcase, href: '#', label: 'LinkedIn' },
+  { icon: Code, href: '#', label: 'GitHub' },
 ];
 
 export default function Footer() {
@@ -37,7 +37,7 @@ export default function Footer() {
             </a>
             <p className="text-sm text-slate-400 leading-relaxed mb-5 max-w-xs">
               IT solutions and consultancy helping businesses build powerful
-              digital products. From web to mobile to enterprise — we've got you
+              digital products. From web to mobile to enterprise — we&apos;ve got you
               covered.
             </p>
             <div className="flex gap-3">

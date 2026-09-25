@@ -13,7 +13,7 @@ export default function CTABanner() {
               Ready to Start Your Project?
             </h2>
             <p className="text-brand-100 text-lg mb-8">
-              Let's talk about your idea. Get a free, no-obligation consultation
+              Let&apos;s talk about your idea. Get a free, no-obligation consultation
               with our technical team today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

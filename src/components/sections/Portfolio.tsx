@@ -37,7 +37,7 @@ export default function Portfolio() {
               Projects That Speak for Themselves
             </h2>
             <p className="text-slate-600">
-              A selection of products we've built for clients across fintech,
+              A selection of products we&apos;ve built for clients across fintech,
               e-commerce, and enterprise SaaS.
             </p>
           </div>
@@ -57,6 +57,7 @@ export default function Portfolio() {
               className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-brand-900/10 hover:-translate-y-2 transition-all duration-300"
             >
               <div className="relative overflow-hidden h-52">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={p.img}
                   alt={p.title}

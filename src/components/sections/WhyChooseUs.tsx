@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
             A Partner You Can Rely On
           </h2>
           <p className="text-slate-600">
-            We don't just write code — we build long-term partnerships rooted in
+            We don&apos;t just write code — we build long-term partnerships rooted in
             trust, quality, and measurable results.
           </p>
         </div>

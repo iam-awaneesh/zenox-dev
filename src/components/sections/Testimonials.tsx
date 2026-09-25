@@ -39,7 +39,7 @@ export default function Testimonials() {
             Trusted by Teams Worldwide
           </h2>
           <p className="text-slate-600">
-            Don't just take our word for it — here's what our clients have to
+            Don&apos;t just take our word for it — here&apos;s what our clients have to
             say about working with BitJunoo.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Testimonials() {
                   />
                 ))}
               </div>
-              <p className="text-slate-600 leading-relaxed mb-6">"{t.quote}"</p>
+              <p className="text-slate-600 leading-relaxed mb-6">&quot;{t.quote}&quot;</p>
               <div className="flex items-center gap-3 pt-5 border-t border-slate-100">
                 <div
                   className={`flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-br ${t.color} text-white font-semibold text-sm`}
