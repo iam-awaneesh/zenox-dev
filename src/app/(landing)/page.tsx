@@ -89,22 +89,22 @@ export default function HomePage() {
       </section>
 
       {/* Services Component */}
-      <Services />
+      {/* <Services /> */}
 
       {/* Why Choose Us Component */}
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
 
       {/* Tech Stack Component */}
-      <TechStack />
+      {/* <TechStack /> */}
 
       {/* Portfolio Component */}
-      <Portfolio />
+      {/* <Portfolio /> */}
 
       {/* Testimonials Component */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* Call To Action Banner */}
-      <CTABanner />
+      {/* <CTABanner /> */}
     </>
   );
 }
