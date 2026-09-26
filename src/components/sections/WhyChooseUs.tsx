@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BrainCircuit, Layers, Rocket, BarChart3, CheckCircle2, ArrowRight, ShieldCheck, HeartHandshake, Zap } from "lucide-react";
+import Image from "next/image";
+import { BrainCircuit, Layers, Rocket, BarChart3, CheckCircle2, ArrowRight, ShieldCheck, HeartHandshake, Zap, Lock, Code2 } from "lucide-react";
 
 export const whyChooseReasons = [
   {
@@ -68,7 +69,32 @@ export default function WhyChooseUs() {
               ))}
             </div>
 
-            <div className="mt-9">
+            {/* Visual Abstract Tech Card */}
+            <div className="mt-8 relative rounded-2xl overflow-hidden border border-slate-200/80 shadow-md group">
+              <div className="relative h-44 w-full">
+                <Image
+                  src="/assets/tech_abstract.jpg"
+                  alt="Enterprise Architecture Innovation"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/40 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-500/80 text-[11px] font-bold backdrop-blur-md mb-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <span>SLA & SOC2 Ready</span>
+                  </div>
+                  <p className="font-heading text-sm font-bold text-white">
+                    Guaranteed Architectural Resilience
+                  </p>
+                  <p className="text-xs text-slate-300">
+                    Built to scale smoothly from 10k to 10M+ active users.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-primary-50 hover:bg-primary-100 border border-primary-200 text-primary-700 font-semibold text-sm transition-all group"
@@ -81,7 +107,7 @@ export default function WhyChooseUs() {
 
           {/* Right Column: Reason Cards */}
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5">
-            {whyChooseReasons.slice(0, 4).map((reason, i) => (
+            {whyChooseReasons.map((reason, i) => (
               <div
                 key={reason.title}
                 className="p-7 rounded-2xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl hover:shadow-primary-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
