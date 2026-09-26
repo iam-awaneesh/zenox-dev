@@ -75,53 +75,6 @@ export default function Footer() {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Newsletter / Pre-footer section */}
-      <div className="border-b border-orange-200/60 py-8 sm:py-10 relative z-10">
-        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12">
-          <div className="rounded-2xl bg-white/95 backdrop-blur-md p-6 sm:p-8 lg:p-9 border border-orange-200/70 shadow-xl shadow-orange-950/5 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
-            <div className="max-w-xl text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/80 text-primary-800 text-xs font-semibold mb-2.5">
-                <Sparkles className="w-3.5 h-3.5 text-primary-600" />
-                <span>Stay Ahead in Tech</span>
-              </div>
-              <h3 className="font-heading text-xl sm:text-2xl lg:text-3xl font-bold text-ink-900 tracking-tight">
-                Subscribe to Engineering & Growth Insights
-              </h3>
-              <p className="mt-1.5 text-xs sm:text-sm text-slate-500">
-                Monthly teardowns of scalable cloud architectures, AI automation playbooks, and modern SEO algorithms.
-              </p>
-            </div>
-
-            <div className="w-full lg:w-auto min-w-[300px] sm:min-w-[360px]">
-              {subscribed ? (
-                <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <span>Thank you! You're subscribed to ZenoxDev insights.</span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex gap-2">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your business email"
-                    className="flex-1 px-4 py-2.5 sm:py-3 rounded-xl bg-slate-50/80 border border-orange-200/80 text-ink-900 placeholder-slate-400 text-sm focus:outline-none focus:border-primary-500 transition-colors"
-                  />
-                  <button
-                    type="submit"
-                    className="px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-500 hover:to-primary-600 text-white text-sm font-semibold shadow-md shadow-primary-600/30 transition-all cursor-pointer flex items-center gap-1.5"
-                  >
-                    <span>Join</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Links */}
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10 xl:px-12 py-10 sm:py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-8">
@@ -212,11 +165,11 @@ export default function Footer() {
             <ul className="space-y-2.5 mb-5">
               <li>
                 <a
-                  href="mailto:contact@zenoxdev.com"
+                  href="mailto:info@zenoxdev.com"
                   className="flex items-start gap-2.5 text-sm text-slate-600 hover:text-primary-600 transition-colors"
                 >
                   <Mail className="w-4 h-4 text-primary-600 flex-shrink-0 mt-0.5" />
-                  <span>contact@zenoxdev.com</span>
+                  <span>info@zenoxdev.com</span>
                 </a>
               </li>
               <li>

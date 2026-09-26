@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Sparkles, Zap, ShieldCheck, CheckCircle2, TrendingUp, Layers, Terminal } from "lucide-react";
 
 export default function Hero() {
@@ -105,6 +106,16 @@ export default function Hero() {
                       <span>Zero vulnerabilities • 99.98% SLA Guaranteed</span>
                     </div>
                   </div>
+                </div>
+
+                {/* Floating Image */}
+                <div className="mt-5 relative w-full h-40 sm:h-48 rounded-2xl overflow-hidden shadow-lg border border-slate-200/60">
+                  <Image 
+                    src="/assets/cloud_architecture.jpg" 
+                    alt="Cloud Architecture" 
+                    fill 
+                    className="object-cover" 
+                  />
                 </div>
 
                 {/* Floating Metrics Overlay */}

@@ -11,15 +11,11 @@ import {
   Zap,
   ArrowRight,
   CheckCircle2,
-  Cpu,
-  Layers,
-  ShieldCheck,
   TrendingUp,
-  FileCheck,
-  Clock,
   HelpCircle,
 } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Full-Stack Software Services | Web, Mobile, AI SEO & DevOps",
@@ -54,6 +50,7 @@ const fullServices = [
     tech: ["Next.js", "React 19", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
     impactMetric: "99.98% Uptime & Sub-100ms Latency",
     badge: "Flagship",
+    image: "/assets/fullstack_dev.jpg",
   },
   {
     id: "mobile",
@@ -72,6 +69,7 @@ const fullServices = [
     tech: ["React Native", "Expo", "TypeScript", "Redux Toolkit", "WebRTC"],
     impactMetric: "4.9 Average Store Rating Across 40+ Apps",
     badge: "Mobile First",
+    image: "/assets/mobile_app_dev.jpg",
   },
   {
     id: "seo",
@@ -90,6 +88,7 @@ const fullServices = [
     tech: ["Schema.org", "Google Search Console", "Screaming Frog", "Lighthouse", "Ahrefs"],
     impactMetric: "+240% Average Organic Traffic Growth",
     badge: "High ROI",
+    image: "/assets/seo_growth.jpg",
   },
   {
     id: "ai-seo",
@@ -109,6 +108,7 @@ const fullServices = [
     impactMetric: "2.8x Faster Time-to-Page-One",
     badge: "AI-Powered",
     badgeColor: "amber",
+    image: "/assets/ai_concept.jpg",
   },
   {
     id: "automation",
@@ -128,6 +128,7 @@ const fullServices = [
     impactMetric: "20+ Hours Saved Per Employee Weekly",
     badge: "Automated",
     badgeColor: "cyan",
+    image: "/assets/api_connections.jpg",
   },
   {
     id: "devops",
@@ -147,6 +148,7 @@ const fullServices = [
     impactMetric: "< 4 Minute Automated Deployment Cycles",
     badge: "Automated",
     badgeColor: "cyan",
+    image: "/assets/devops_cicd.jpg",
   },
 ];
 
@@ -341,8 +343,11 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Right Column: ROI & Highlights Card */}
-                  <div className={`lg:col-span-5 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between h-full">
+                  <div className={`lg:col-span-5 flex flex-col gap-6 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                    <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                      <Image src={service.image} alt={service.title} fill className="object-cover" />
+                    </div>
+                    <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between flex-grow">
                       <div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold mb-6">
                           <TrendingUp className="w-4 h-4" />

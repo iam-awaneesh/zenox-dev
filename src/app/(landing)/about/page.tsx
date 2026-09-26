@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Sparkles,
   Target,
@@ -175,6 +176,17 @@ export default function AboutPage() {
             >
               <span>View Case Studies</span>
             </Link>
+          </div>
+
+          {/* Hero Image */}
+          <div className="mt-16 sm:mt-20 relative w-full max-w-5xl mx-auto h-64 sm:h-80 lg:h-[400px] rounded-3xl overflow-hidden shadow-2xl shadow-primary-900/10 border border-slate-200/50">
+            <Image 
+              src="/assets/software_dev.jpg" 
+              alt="ZenoxDev Modern Engineering Workspace" 
+              fill 
+              className="object-cover"
+              priority 
+            />
           </div>
         </div>
       </section>

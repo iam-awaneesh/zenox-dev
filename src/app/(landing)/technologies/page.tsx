@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Layers,
   Sparkles,
@@ -312,6 +313,17 @@ export default function TechnologiesPage() {
             >
               <span>View How We Apply Stack</span>
             </Link>
+          </div>
+
+          {/* Hero Image */}
+          <div className="mt-16 sm:mt-20 relative w-full max-w-5xl mx-auto h-64 sm:h-80 lg:h-[400px] rounded-3xl overflow-hidden shadow-2xl shadow-primary-900/10 border border-slate-200/50">
+            <Image 
+              src="/assets/tech_abstract.jpg" 
+              alt="ZenoxDev Abstract Technology Stack" 
+              fill 
+              className="object-cover"
+              priority 
+            />
           </div>
         </div>
       </section>
