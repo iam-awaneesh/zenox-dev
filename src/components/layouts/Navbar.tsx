@@ -63,34 +63,29 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center">
-            <ul className="flex items-center gap-1 bg-orange-50/60 p-1.5 rounded-full border border-orange-200/60 backdrop-blur-md shadow-xs">
-              {navLinks.map((link) => {
-                const isActive =
-                  link.href === "/"
-                    ? pathname === "/"
-                    : pathname === link.href || pathname?.startsWith(link.href + "/");
+          <ul className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname === link.href || pathname?.startsWith(link.href + "/");
 
-                return (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5 ${
-                        isActive
-                          ? "text-primary-700 font-semibold bg-white border border-orange-200/80 shadow-xs"
-                          : "text-slate-600 hover:text-ink-900 hover:bg-white/60"
-                      }`}
-                    >
-                      <span>{link.label}</span>
-                      {isActive && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 shadow-[0_0_8px_rgba(249,115,22,0.4)]" />
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+              return (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className={`relative py-2 text-sm font-medium transition-all duration-200 ${
+                      isActive
+                        ? "text-primary-700 font-semibold underline decoration-primary-500 decoration-2 underline-offset-[6px]"
+                        : "text-slate-600 hover:text-ink-900 hover:underline decoration-2 underline-offset-[6px] decoration-transparent hover:decoration-slate-300"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
           {/* Desktop Right CTA */}
           <div className="hidden lg:flex items-center gap-3">
@@ -139,16 +134,13 @@ export default function Navbar() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className={`flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-medium transition-colors ${
+                        className={`block px-4 py-3 rounded-2xl text-sm font-medium transition-colors ${
                           isActive
-                            ? "bg-gradient-to-r from-primary-50 to-orange-50 text-primary-700 font-bold border border-primary-200"
+                            ? "bg-gradient-to-r from-primary-50 to-orange-50 text-primary-700 font-bold border border-primary-200 underline decoration-primary-500 decoration-2 underline-offset-4"
                             : "text-slate-600 hover:bg-slate-50 hover:text-ink-900"
                         }`}
                       >
-                        <span>{link.label}</span>
-                        {isActive && (
-                          <span className="w-2 h-2 rounded-full bg-[#ff6a00] shadow-[0_0_8px_#ff6a00]" />
-                        )}
+                        {link.label}
                       </Link>
                     </li>
                   );
